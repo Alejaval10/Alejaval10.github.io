@@ -1,10 +1,23 @@
+.banner {
+    width: 100%;
+  
+    height: 300vh;
+    background-image: linear-gradient(rgba(182, 182, 182, 0.657), rgba(170, 170, 170, 0.715)),
+      url("https://media.istockphoto.com/id/583715254/es/foto/banderas-nacionales-de-los-diferentes-pa%C3%ADses-del-mundo.jpg?s=170667a&w=0&k=20&c=VgPRIWq1FhqCXIHLyY6GcIr47yneLFQ1ruRMGtU87W0=");
+   
+    background-size: cover;
+    background-attachment: fixed;
+  }
+ 
 img{
     height: auto;
     width: 300px;
     border-radius: 15%;
     margin: 10px;
 }
-
+.band{
+    text-align: center;
+}
 th{
     text-align: center;
 }

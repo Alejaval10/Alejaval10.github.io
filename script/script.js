@@ -38,18 +38,57 @@ const paises = [
 ];
 
 agregarMonitores();
-
 //funcion para agregar listeners a los botones
 function agregarMonitores() {
-    //TODO
+    let mostrarpa = document.getElementById("mostrarPaises");
+    mostrarpa.addEventListener("click", mostrarPaises);
+    let agregarpa = document.getElementById("agregarPais");
+    agregarpa.addEventListener("click", agregarPais);
 }
-
 
 //funcion que mostrara las paises en la pagina
 function mostrarPaises() {
-  //TODO
+    let datos = "";
+    for(let nuevo = 0; nuevo < paises.length; nuevo++){
+    datos += `<table class="table table-dark table-sm">
+        <tr class="table-active">
+        <th>Nombre</th> <th>Capital</th> <th>Idioma Oficial</th> <th>Moneda</th>  </tr>
+        <tr>
+        <td>${paises[nuevo].nombre}</td> <td>${paises[nuevo].capital}</td> <td>${paises[nuevo].idioma_oficial}</td> <td>${paises[nuevo].moneda}</td>
+        </tr>
+        <tr class="band">
+        <td colspan="4"><img src="${paises[nuevo].bandera}"></td>
+        </tr>
+        </table>`;
+    }
+    document.getElementById("paises").innerHTML = datos;
 }
 
 //funcion que permite agregar un pais al arreglo
 function agregarPais() {
+    let paisn =  prompt("Escribe el nombre del pais");
+    let ciudadn = prompt("Escribe el nombre de la capital");
+    let idioman = prompt("Escribe el nombre del idioma");
+    let monedan = prompt("Escribe el nombre de la moneda");
+    let banderan = prompt("Escribe el link o vinculo de la bandera");
+    if (paisn,ciudadn, idioman, monedan, banderan === null || paisn,ciudadn, idioman, monedan, banderan  == '' ) {
+        return false;
+    }else{
+    let pais = {nombre: paisn, capital: ciudadn, idioma_oficial: idioman, moneda: monedan, bandera: banderan};
+    paises.unshift(pais);
+    }   
+    let datos = "";
+    for(let nuevo = 0; nuevo < paises.length; nuevo++){
+        datos += `<table class="table table-dark table-sm">
+        <tr class="table-active">
+        <th">Nombre</th> <th>Capital</th> <th>Idioma Oficial</th> <th">Moneda</th> </tr>
+        <tr>
+        <td>${paises[nuevo].nombre}</td> <td>${paises[nuevo].capital}</td> <td>${paises[nuevo].idioma_oficial}</td> <td>${paises[nuevo].moneda}</td>
+        </tr>
+        <tr class="band">
+        <td colspan="4"><img src="${paises[nuevo].bandera}"></td>
+        </tr>
+        </table>`;
+    }
+    document.getElementById("paises").innerHTML = datos;
 }
